@@ -52,12 +52,14 @@ $(document).ready(function () {
         defeated = [];
         $("#stats").empty();
         $("#stats").show();
-        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#charChoice");
-        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
-        $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");
-        
+        $("#stats").show();
+        //$("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#charChoice");
+        //$("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
+        $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");        
         $("#charOne, #charTwo, #charThree, #charFour").removeClass("newDefender");
         $("#charOne, #charTwo, #charThree, #charFour").show();
+        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
+        $("#charOneHp, #charTwoHp, #charThreeHp, #charFourHp").show();
         $("#charOneHp").html("HP: " + char1.health);
         $("#charTwoHp").html("HP: " + char2.health);
         $("#charThreeHp").html("HP: " + char3.health);
@@ -210,8 +212,7 @@ $(document).ready(function () {
             $("#stats").append("<div>You did " + attacker.attack + " damage!</div>");
             //$("#stats").append("<div>Defender Health: " + defender.health + "</div>");
             $("#stats").append("<div>You recieved " + defender.attack + " damage!</div>");
-            $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
-            $("#stats").append("<div>Defender Health: " + defender.health + "</div>");
+            
 
             if (defender === char1) {
                 $("#charOneHp").html("HP: " + defender.health);
