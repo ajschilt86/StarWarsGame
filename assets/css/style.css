@@ -9,6 +9,10 @@ h1 {
     margin-bottom: 30px;
 }
 
+h2 {
+    font-size: 60px;
+}
+
 #charChoice {
 
     font-size: 60px;
@@ -45,5 +49,7 @@ h1 {
 #defend {
     font-size: 60px;
 }
+
+
 
 
