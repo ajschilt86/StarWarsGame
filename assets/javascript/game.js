@@ -50,8 +50,7 @@ $(document).ready(function () {
         attacker = "";
         defender = "";
         defeated = [];
-        
-
+        $("#stats").empty();
         $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");
         $("#charOne, #charTwo, #charThree, #charFour").removeClass("newDefender");
         $("#charOne, #charTwo, #charThree, #charFour").show();
@@ -60,7 +59,6 @@ $(document).ready(function () {
     var pick = false;
 
     //choose a character and the rest go down as enemies
-
 
     var attacker = "";
 
@@ -165,39 +163,46 @@ $(document).ready(function () {
         }
     });
 
-
     //attack enemy, adjust player/defender hp and attack
 
     var defeated = [];
 
     $("#attackBtn").on("click", function () {
 
-
         defender.health = defender.health - attacker.attack;
         attacker.health = attacker.health - defender.attack;
 
         attacker.attack = attacker.attack + Math.round(Math.random() * 20);
-
+        $("#stats").empty();        
+        // $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
+        $("#stats").append("<div>Attacker Attack: " + attacker.attack + "</div>");
+        //$("#stats").append("<div>Defender Health: " + defender.health + "</div>");
+        $("#stats").append("<div>Defender Attack: " + defender.attack + "</div>");
+        
 
         if (defender.health <= 0) {
 
             if ((char1.health) <= 0) {
                 $("#charOne").hide();
                 defeated.push(char1)
+                $("#stats").text("Choose an Enemy!"); 
             }
             if ((char2.health) <= 0) {
                 $("#charTwo").hide();
                 defeated.push(char2)
+                $("#stats").text("Choose an Enemy!"); 
 
             }
             if ((char3.health) <= 0) {
                 $("#charThree").hide();
                 defeated.push(char3)
+                $("#stats").text("Choose an Enemy!"); 
 
             }
             if ((char4.health) <= 0) {
                 $("#charFour").hide();
                 defeated.push(char4)
+                $("#stats").text("Choose an Enemy!"); 
             }
             defender = "";
 
@@ -215,12 +220,15 @@ $(document).ready(function () {
             reset();
             losses++;
             $("#losses").text("Losses: " + losses);
-
         }
-
         console.log(attacker);
         console.log(defender);
         console.log("defender.attack " + defender.attack);
+        console.log("defender.health " + defender.health);
+        console.log("attacker.attack " + attacker.attack);
+        console.log("attacker.health " + attacker.health);
+
+
         console.log("defender.health " + defender.health);
         console.log("attacker.attack " + attacker.attack);
         console.log("attacker.health " + attacker.health);

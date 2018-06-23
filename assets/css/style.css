@@ -1,16 +1,31 @@
 body {
     background-image: url(../images/starWarsBackground.jpeg);
-    background-size: 105%  
+    background-size: 105%; 
+    
 }
 
 h1 {
     font-size: 100px;
     text-align: center;
     margin-bottom: 30px;
+    font-family: 'Bungee Inline', cursive;
+    color: gold;
 }
 
 h2 {
     font-size: 60px;
+    font-family: 'Vast Shadow', cursive;
+    color: gold;
+}
+
+h3 {
+    font-family: 'Vast Shadow', cursive;
+    color: gold;
+}
+
+h6 {
+    font-family: 'Vast Shadow', cursive;
+    color: gold;
 }
 
 #charChoice {
@@ -18,38 +33,35 @@ h2 {
     font-size: 60px;
 }
 
-#charOne {
-    width: 300px;
-    height: 180px;
-}
-
-#charTwo {
-    width: 300px;
-    height: 180px;
-}
-
-#charThree {
-    width: 300px;
-    height: 180px;
-}
-
-#charFour {
-    width: 300px;
-    height: 180px;
+#charOne, #charTwo, #charThree, #charFour {
+    width: 280px;
+    height: 160px;
 }
 
 #enemy {
     font-size: 60px;
+    margin-top: 30px;
 }
 
 #fight {
     font-size: 30px;
+    
 }
 
 #defend {
     font-size: 60px;
+    margin-top: 30px;
 }
 
-
+#stats {
+    float: right;
+}
+    
+#defender {
+    
+}
+#defenderContainer {
+    width: 20%;
+}
 
 
