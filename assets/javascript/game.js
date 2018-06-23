@@ -20,7 +20,7 @@ $(document).ready(function () {
     }
 
     var wins = 0;
-    var loss = 0;
+    var losses = 0;
 
     //reset//
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
         char1 = {
             health: 120,
             attack: 12
-        }    
+        }
 
         char2 = {
             health: 100,
@@ -51,9 +51,21 @@ $(document).ready(function () {
         defender = "";
         defeated = [];
         $("#stats").empty();
+        $("#stats").show();
+        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#charChoice");
+        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
         $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");
+        
         $("#charOne, #charTwo, #charThree, #charFour").removeClass("newDefender");
         $("#charOne, #charTwo, #charThree, #charFour").show();
+        $("#charOneHp").html("HP: " + char1.health);
+        $("#charTwoHp").html("HP: " + char2.health);
+        $("#charThreeHp").html("HP: " + char3.health);
+        $("#charFourHp").html("HP: " + char4.health);
+        $("#attackBtn").hide();
+        $("#enemy").hide();
+        $("#defend").hide();
+        $("#fightSelect").hide();
     }
 
     var pick = false;
@@ -66,12 +78,16 @@ $(document).ready(function () {
     $("#enemy").hide();
     $("#defend").hide();
     $("#fightSelect").hide();
+    $("#charOneHp").html("HP: " + char1.health);
+    $("#charTwoHp").html("HP: " + char2.health);
+    $("#charThreeHp").html("HP: " + char3.health);
+    $("#charFourHp").html("HP: " + char4.health);
 
     $("#charOne").on("click", function () {
         if (pick === false) {
             console.log(pick);
             console.log("#charOne");
-            $("#charTwo, #charThree, #charFour").appendTo("#enemies");
+            $("#charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#enemies");
             $("#charTwo, #charThree, #charFour").addClass("newDefender");
             $("#enemy").show();
             pick = true;
@@ -83,7 +99,7 @@ $(document).ready(function () {
         if (pick === false) {
             console.log(pick);
             console.log("#charTwo");
-            $("#charOne, #charThree, #charFour").appendTo("#enemies");
+            $("#charOneWrap, #charThreeWrap, #charFourWrap").appendTo("#enemies");
             $("#charOne, #charThree, #charFour").addClass("newDefender");
             $("#enemy").show();
             pick = true;
@@ -95,7 +111,7 @@ $(document).ready(function () {
         if (pick === false) {
             console.log(pick);
             console.log("#charThree");
-            $("#charOne, #charTwo, #charFour").appendTo("#enemies");
+            $("#charOneWrap, #charTwoWrap, #charFourWrap").appendTo("#enemies");
             $("#charOne, #charTwo, #charFour").addClass("newDefender");
             $("#enemy").show();
             pick = true;
@@ -107,7 +123,7 @@ $(document).ready(function () {
         if (pick === false) {
             console.log(pick);
             console.log("#charFour");
-            $("#charOne, #charTwo, #charThree").appendTo("#enemies");
+            $("#charOneWrap, #charTwoWrap, #charThreeWrap").appendTo("#enemies");
             $("#charOne, #charTwo, #charThree").addClass("newDefender");
             $("#enemy").show();
             pick = true;
@@ -124,6 +140,7 @@ $(document).ready(function () {
                 console.log(pick);
                 console.log("#charOne");
                 $("#charOne").appendTo("#defender");
+                $("#charOneWrap").appendTo("#defender");
                 console.log("#enemies");
                 defender = char1;
                 $("#attackBtn").show();
@@ -138,6 +155,7 @@ $(document).ready(function () {
                 console.log(pick);
                 console.log("#charTwo");
                 $("#charTwo").appendTo("#defender");
+                $("#charTwoWrap").appendTo("#defender");
                 console.log("#enemies");
                 defender = char2;
                 $("#attackBtn").show();
@@ -152,6 +170,7 @@ $(document).ready(function () {
                 console.log(pick);
                 console.log("#charThree");
                 $("#charThree").appendTo("#defender");
+                $("#charThreeWrap").appendTo("#defender");
                 console.log("#enemies");
                 defender = char3;
                 $("#attackBtn").show();
@@ -166,6 +185,7 @@ $(document).ready(function () {
                 console.log(pick);
                 console.log("#charFour");
                 $("#charFour").appendTo("#defender");
+                $("#charFourWrap").appendTo("#defender");
                 console.log("#enemies");
                 defender = char4;
                 $("#attackBtn").show();
@@ -178,64 +198,100 @@ $(document).ready(function () {
     var defeated = [];
 
     $("#attackBtn").on("click", function () {
+        function attack() {
+            Math.round(Math.random() * 20) + 1
+        }
+        if (defender != "") {
+            defender.health = defender.health - attacker.attack;
+            attacker.health = attacker.health - defender.attack;
+            attacker.attack = attacker.attack + Math.round(Math.random() * 20);
+            $("#stats").empty();
+            // $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
+            $("#stats").append("<div>You did " + attacker.attack + " damage!</div>");
+            //$("#stats").append("<div>Defender Health: " + defender.health + "</div>");
+            $("#stats").append("<div>You recieved " + defender.attack + " damage!</div>");
+            $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
+            $("#stats").append("<div>Defender Health: " + defender.health + "</div>");
 
-        defender.health = defender.health - attacker.attack;
-        attacker.health = attacker.health - defender.attack;
-        attacker.attack = attacker.attack + Math.round(Math.random() * 20);
-        $("#stats").empty();        
-        // $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
-        $("#stats").append("<div>You did " + attacker.attack + " damage!</div>");
-        //$("#stats").append("<div>Defender Health: " + defender.health + "</div>");
-        $("#stats").append("<div>You recieved " + defender.attack + " damage!</div>");
-        $("#stats").append("<div>Attacker Health: " + attacker.health + "</div>");
-        $("#stats").append("<div>Defender Health: " + defender.health + "</div>");
-                
-
-        if (defender.health <= 0) {
-            if ((char1.health) <= 0) {
-                $("#charOne").hide();
-                defeated.push(char1)
-                $("#stats").text("Choose an Enemy!"); 
+            if (defender === char1) {
+                $("#charOneHp").html("HP: " + defender.health);
             }
-            if ((char2.health) <= 0) {
-                $("#charTwo").hide();
-                defeated.push(char2)
-                $("#stats").text("Choose an Enemy!"); 
-
+            else if (defender === char2) {
+                $("#charTwoHp").html("HP: " + defender.health);
             }
-            if ((char3.health) <= 0) {
-                $("#charThree").hide();
-                defeated.push(char3)
-                $("#stats").text("Choose an Enemy!"); 
-
+            else if (defender === char3) {
+                $("#charThreeHp").html("HP: " + defender.health);
             }
-            if ((char4.health) <= 0) {
-                $("#charFour").hide();
-                defeated.push(char4)
-                $("#stats").text("Choose an Enemy!"); 
+            else if (defender === char4) {
+                $("#charFourHp").html("HP: " + defender.health);
             }
-            defender = "";
 
-            for (var i = 0; i < defeated.length; i++) {
-                if (defeated.length === 6) {
-                    reset();
-                    wins++;
-                    $("#wins").text("Wins: " + wins);
+
+
+            if (attacker === char1) {
+                $("#charOneHp").html("HP: " + attacker.health);
+            }
+            else if (attacker === char2) {
+                $("#charTwoHp").html("HP: " + attacker.health);
+            }
+            else if (attacker === char3) {
+                $("#charThreeHp").html("HP: " + attacker.health);
+            }
+            else if (attacker === char4) {
+                $("#charFourHp").html("HP: " + attacker.health);
+            }
+
+
+            if (defender.health <= 0) {
+                if ((char1.health) <= 0) {
+                    $("#charOne").hide();
+                    $("#charOneWrap").hide();
+                    defeated.push(char1)
+                    $("#stats").text("Choose an Enemy!");
                 }
-                console.log(defeated);
+                if ((char2.health) <= 0) {
+                    $("#charTwo").hide();
+                    $("#charTwoWrap").hide();
+                    defeated.push(char2)
+                    $("#stats").text("Choose an Enemy!");
+
+                }
+                if ((char3.health) <= 0) {
+                    $("#charThree").hide();
+                    $("#charThreeWrap").hide();
+                    defeated.push(char3)
+                    $("#stats").text("Choose an Enemy!");
+
+                }
+                if ((char4.health) <= 0) {
+                    $("#charFour").hide();
+                    $("#charFourWrap").hide();
+                    defeated.push(char4)
+                    $("#stats").text("Choose an Enemy!");
+                }
+                defender = "";
+
+                for (var i = 0; i < defeated.length; i++) {
+                    if (defeated.length === 6) {
+                        reset();
+                        wins++;
+                        $("#wins").text("Wins: " + wins);
+                    }
+                    console.log(defeated);
+                }
             }
+            if (attacker.health <= 0) {
+                reset();
+                losses++;
+                $("#losses").text("Losses: " + losses);
+            }
+            console.log(attacker);
+            console.log(defender);
+            console.log("defender.attack " + defender.attack);
+            console.log("defender.health " + defender.health);
+            console.log("attacker.attack " + attacker.attack);
+            console.log("attacker.health " + attacker.health);
         }
-        if (attacker.health <= 0) {
-            reset();
-            losses++;
-            $("#losses").text("Losses: " + losses);
-        }
-        console.log(attacker);
-        console.log(defender);
-        console.log("defender.attack " + defender.attack);
-        console.log("defender.health " + defender.health);
-        console.log("attacker.attack " + attacker.attack);
-        console.log("attacker.health " + attacker.health);     
     });
 
 
