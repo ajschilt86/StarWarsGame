@@ -18,7 +18,7 @@ $(document).ready(function () {
         health: 180,
         attack: 7,
     }
-b
+
     var pick = false;
 
     //choose a character and the rest go down as enemies
@@ -131,27 +131,42 @@ b
     //attack enemy, adjust player/defender hp and attack
 
     $("#attackBtn").on("click", function () {
-        
+
 
         defender.health = defender.health - attacker.attack;
         attacker.health = attacker.health - defender.attack;
 
-        attacker.attack = attacker.attack + Math.round(Math.random()*20);
-        
-        
-        if (defender.health <= 0) {
-            $("#defender").hide();
-        }
+        attacker.attack = attacker.attack + Math.round(Math.random() * 20);
 
+
+        if (defender.health <= 0) {
+
+            if ((char1.health) <= 0) {
+                $("#charOne").hide();
+            }
+            if ((char2.health) <= 0) {
+                $("#charTwo").hide();
+
+            }
+            if ((char3.health) <= 0) {
+                $("#charThree").hide();
+
+            } if ((char4.health) <= 0) {
+                $("#charFour").hide();
+            }
+
+
+            defender = "";
+
+        }
         if (attacker.health <= 0) {
-            $("#defender").hide();
+
             alert("you suck");
         }
-
         console.log(attacker);
         console.log(defender);
         console.log("defender.attack " + defender.attack);
-        console.log("defender.health " + defender.health);        
+        console.log("defender.health " + defender.health);
         console.log("attacker.attack " + attacker.attack);
         console.log("attacker.health " + attacker.health);
     });
