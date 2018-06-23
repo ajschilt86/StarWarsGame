@@ -1,0 +1,49 @@
+body {
+    background-image: url(../images/starWarsBackground.jpeg);
+    background-size: 105%  
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#charChoice {
+
+    font-size: 60px;
+}
+
+#charOne {
+    width: 300px;
+    height: 180px;
+}
+
+#charTwo {
+    width: 300px;
+    height: 180px;
+}
+
+#charThree {
+    width: 300px;
+    height: 180px;
+}
+
+#charFour {
+    width: 300px;
+    height: 180px;
+}
+
+#enemy {
+    font-size: 60px;
+}
+
+#fight {
+    font-size: 30px;
+}
+
+#defend {
+    font-size: 60px;
+}
+
+
