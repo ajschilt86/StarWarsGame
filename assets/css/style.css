@@ -1,7 +1,6 @@
 body {
     background-image: url(../images/starWarsBackground.jpeg);
-    background-size: 105%; 
-    
+    background-size: 105%;     
 }
 
 h1 {
@@ -29,13 +28,12 @@ h6 {
 }
 
 #charChoice {
-
     font-size: 60px;
 }
 
 #charOne, #charTwo, #charThree, #charFour {
-    width: 280px;
-    height: 160px;
+    width: 260px;
+    height: 130px;
 }
 
 #enemy {
@@ -44,8 +42,7 @@ h6 {
 }
 
 #fight {
-    font-size: 30px;
-    
+    font-size: 30px;    
 }
 
 #defend {
@@ -55,13 +52,19 @@ h6 {
 
 #stats {
     float: right;
+    font-size: 30px;
 }
     
-#defender {
-    
-}
 #defenderContainer {
-    width: 20%;
+    width: 30%;    
 }
+
+#attackBtn {
+    font-size: 35px;
+    height: 60px;
+    width: 160px;
+}
+
+
 
 
