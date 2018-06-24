@@ -54,10 +54,16 @@ h6 {
     width: 260px;
     height: 130px;
     margin: 0 20px;
+    
 }
  
 #charOneHp, #charTwoHp, #charThreeHp, #charFourHp {
     text-align: center;
+    background-size: 30px 30px;
+    font-size: 20px;
+    background-color: green;
+    border: 1px solid black;
+    
 }
  
 #enemy {
