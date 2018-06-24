@@ -60,10 +60,7 @@ $(document).ready(function () {
         defeated = [];
         $("#stats").empty();
         $("#stats").show();
-        $("#stats").show();
-        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#charChoice");
-        //$("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
-        // $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");        
+        $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").appendTo("#charChoice");       
         $("#charOne, #charTwo, #charThree, #charFour").removeClass("newDefender");
         $("#charOne, #charTwo, #charThree, #charFour").show();
         $("#charOneWrap, #charTwoWrap, #charThreeWrap, #charFourWrap").show();
@@ -163,7 +160,7 @@ $(document).ready(function () {
                 console.log("#enemies");
                 defender = char2;
                 $("#attackBtn").show();
-                $("#defend").show();
+                $("#defend").show();                
             }
         }
     });
@@ -178,7 +175,7 @@ $(document).ready(function () {
                 console.log("#enemies");
                 defender = char3;
                 $("#attackBtn").show();
-                $("#defend").show();
+                $("#defend").show();                
             }
         }
     });
@@ -192,7 +189,7 @@ $(document).ready(function () {
                 console.log("#enemies");
                 defender = char4;
                 $("#attackBtn").show();
-                $("#defend").show();
+                $("#defend").show();                
             }
         }
     });
@@ -215,6 +212,7 @@ $(document).ready(function () {
             $("#stats").append("<div>You recieved " + defender.attack + " damage!</div>");
 
 
+            /////Defender HP//////
             if (defender === char1) {
                 $("#charOneHp").html("HP: " + defender.health);
             }
@@ -228,8 +226,7 @@ $(document).ready(function () {
                 $("#charFourHp").html("HP: " + defender.health);
             }
 
-
-
+            /////Attacker HP//////
             if (attacker === char1) {
                 $("#charOneHp").html("HP: " + attacker.health);
             }
@@ -243,8 +240,7 @@ $(document).ready(function () {
                 $("#charFourHp").html("HP: " + attacker.health);
             }
 
-            /////////////////////////
-
+            ///////HP Colors///////
             if (char1.health <= 100) {
                 $("#charOneHp").css("background-color", "yellow");                 
             }
@@ -282,14 +278,8 @@ $(document).ready(function () {
             }
             if(char4.health <= 30) {
                 $("#charFourHp").css("background-color", "red");
-            }
-
-
-
-          
-
-
-            /////////////////////////
+            }        
+            //////Defender death///////
             if (defender.health <= 0) {
                 if ((char1.health) <= 0) {
                     $("#charOne").hide();
@@ -343,19 +333,6 @@ $(document).ready(function () {
             console.log("attacker.health " + attacker.health);
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //create objects
     //display 4 characters
