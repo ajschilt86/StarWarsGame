@@ -1,0 +1,127 @@
+:root {
+    --bg: #252525;
+    --shadow: #151515;
+    --healthy: forestgreen;
+    --scratched: chartreuse;
+    --damaged: yellow;
+    --warning: orange;
+    --critical: orangered;
+    --ko: darkred;
+    --mana: cornflowerblue;
+
+    --transition-time: 1.5s;
+  }
+  body {
+    background-color: var(--bg);
+    color: cornsilk;
+    font-family: Rockwell, Helvetica, Arial, sans-serif;
+    font-size:2em;
+    padding:25px;
+  }
+
+  div {
+    margin:5px 0px;
+  }
+
+  h1 {
+    margin:10px 0px;
+    font-size:2.5em;
+  }
+  
+  h2 {
+    margin:10px 0px;
+    font-size:1.75em;
+  }
+  
+  .content, .btn-container {
+    padding:25px;
+    background-color: var(--shadow);
+    border-radius:10px;
+    margin: 5px 0;
+  }
+
+  .btn-container {
+    width:500px;
+  }
+
+  #health-meter, #mana-meter {
+    height: 8px;
+    border-radius: 3px;
+    transition: all var(--transition-time) ease 0s;
+    margin:3px;
+    box-shadow: black 0 2px 2px;
+  }
+  
+  #mana-meter {
+    background-color:cornflowerblue!important;
+  }
+
+  .btn {
+    color:blanchedalmond;
+    box-shadow: black 0 2px 2px;
+    text-shadow: black 0 2px 0px;
+    padding:10px 15px;
+    border:0;
+    border-radius:5px;
+    font-size:0.75em;
+    font-family: Rockwell, "Cooper Black";
+    cursor:pointer;
+  }
+
+  .btn:hover {
+    border: solid 2px white;
+    padding: 8px 13px;
+  }
+
+  .mana-btn {
+    background-color: var(--mana);
+  }
+
+  .healthy, .healthy-btn {
+    background-color: var(--healthy);
+  }
+
+  .healthy, .full {
+    width: 100%;
+  }
+
+  .scratched, .scratched-btn {
+    background-color: var(--scratched);
+  }
+
+  .scratched, .eighty {
+    width: 80%;
+  }
+
+  .damaged, .damaged-btn {
+    background-color: var(--damaged);
+  }
+
+  .damaged, .sixty {
+    width: 60%;
+  }
+
+  .warning, .warning-btn {
+    background-color: var(--warning);
+  }
+
+  .warning, .forty {
+    width: 40%;
+  }
+
+  .critical, .critical-btn {
+    background-color: var(--critical);
+  }
+
+  .critical, .twenty {
+    width: 20%;
+  }
+
+  .ko, .ko-btn {
+    background-color: var(--ko);
+  }
+
+  .ko, .oom {
+    width: 1%;
+  }
+  
