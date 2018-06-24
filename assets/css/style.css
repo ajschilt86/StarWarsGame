@@ -92,3 +92,29 @@ h6 {
     height: 60px;
     width: 160px;
 }
+
+
+@media screen and (max-width: 640px) {
+    #characterWrap {
+        display: inline;
+        flex-direction: row;}
+     
+    #enemies {
+        display: inline;
+        flex-direction: row;
+    }
+     
+    #defender {
+        display: inline;
+        flex-direction: row;
+    }
+     
+    #charChoice {
+        display: inline;
+        flex-direction: row;
+    }
+
+    #charOneHp, #charTwoHp, #charThreeHp, #charFourHp {
+        width: 297px;
+    }
+}
