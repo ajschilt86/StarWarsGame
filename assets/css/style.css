@@ -63,6 +63,8 @@ h6 {
     font-size: 20px;
     background-color: green;
     border: 1px solid black;
+    width: 87%;
+    margin-left: 19px;   
     
 }
  
@@ -91,6 +93,10 @@ h6 {
     font-size: 35px;
     height: 60px;
     width: 160px;
+}
+
+.rounded {
+    border-radius: 20px;
 }
 
 
