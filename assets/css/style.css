@@ -2,11 +2,18 @@ body {
     background-image: url(../images/starWarsBackground.jpeg);
     background-size: 105%;     
 }
+
+.header {
+
+}
+
+.playStop {
+    
+}
  
 h1 {
     font-size: 100px;
     text-align: center;
-    margin-bottom: 30px;
     font-family: 'Bungee Inline', cursive;
     color: gold;
 }
@@ -28,11 +35,10 @@ h6 {
     color: gold;
 }
  
- 
- 
 #characterWrap {
     display: flex;
-    flex-direction: row;}
+    flex-direction: row;    
+}
  
 #enemies {
     display: flex;
@@ -54,7 +60,6 @@ h6 {
     width: 260px;
     height: 130px;
     margin: 0 20px;
-    
 }
  
 #charOneHp, #charTwoHp, #charThreeHp, #charFourHp {
@@ -62,18 +67,24 @@ h6 {
     background-size: 30px 30px;
     font-size: 20px;
     background-color: green;
-    border: 1px solid black;
-    width: 87%;
-    margin-left: 19px;   
+    border: 0;   
+    transition: all 1s ease-in;
+    border-radius: 10px;   
     
+}
+
+.healthContainer {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 87%;
+    margin-left: 19px;
+    background-color: #252525;
 }
  
 #enemy {
     font-size: 60px;
     margin-top: 30px;
 }
- 
- 
  
 #defend {
     font-size: 60px;
@@ -99,11 +110,11 @@ h6 {
     border-radius: 20px;
 }
 
-
 @media screen and (max-width: 640px) {
     #characterWrap {
         display: inline;
-        flex-direction: row;}
+        flex-direction: row;
+    }
      
     #enemies {
         display: inline;
@@ -121,6 +132,21 @@ h6 {
     }
 
     #charOneHp, #charTwoHp, #charThreeHp, #charFourHp {
-        width: 297px;
+        text-align: center;
+        background-size: 30px 30px;
+        font-size: 20px;
+        background-color: green;
+        border: 0;   
+        transition: all 1s ease-in;
+        border-radius: 10px;   
+        
+    }
+    
+    .healthContainer {
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 87%;
+        margin-left: 19px;
+        background-color: #252525;
     }
 }

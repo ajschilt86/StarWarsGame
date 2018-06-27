@@ -104,7 +104,7 @@ $(document).ready(function () {
         $("#enemy").hide();
         $("#defend").hide();
         $("#fightSelect").hide();
-        $("#charOneHp, #charTwoHp, #charThreeHp, #charFourHp").css("background-color", "green").css("width", "87%").css("margin-left", "19px");
+        $("#charOneHp, #charTwoHp, #charThreeHp, #charFourHp").css("background-color", "green").css("width", "100%");
     }
 
     var pick = false;

@@ -9,41 +9,52 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Vast+Shadow" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div class="header">
     <h1>STAR WARS</h1>
-    <h6 id="wins">Wins:</h6>
-    <h6 id="losses">Losses:</h6>
     <button id="play" class="playStop">Play</button>
     <button id="pause" class="playStop">Pause</button>
     <button id="sounds" class="playStop">Sounds</button>
+    </div>
+    <h6 id="wins">Wins:</h6>
+    <h6 id="losses">Losses:</h6>
+    
     <h2>Choose Your Character</h2>
     <div id="charChoice"></div>
 
     <div id="characterWrap">
         <div id="charOneWrap">
             <img id="charOne" src="assets/images/ObiWan.jpg">
-            <div id="charOneHp"></div>
+            <div class="healthContainer">
+                <div id="charOneHp"></div>
+            </div>
         </div>
 
         <div id="charTwoWrap">
             <img id="charTwo" src="assets/images/LukeSkywalker.jpg">
-            <div id="charTwoHp"></div>
+            <div class="healthContainer">
+                <div id="charTwoHp"></div>
+            </div>
         </div>
 
         <div id="charThreeWrap">
             <img id="charThree" src="assets/images/DarthSidious.jpg">
-            <div id="charThreeHp"></div>
+            <div class="healthContainer">
+                <div id="charThreeHp"></div>
+            </div>
         </div>
 
         <div id="charFourWrap">
             <img id="charFour" src="assets/images/DarthMaul.jpg">
-            <div id="charFourHp"></div>
+            <div class="healthContainer">
+                <div id="charFourHp"></div>
+            </div>
         </div>
     </div>
 
@@ -61,7 +72,7 @@
 
 
     <script src="assets/javascript/game.js"></script>
-    
+
 </body>
 
 </html>
